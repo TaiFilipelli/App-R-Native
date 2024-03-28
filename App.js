@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Pressable } from 'react-native';
+
+import { StyleSheet, Text, View, Image, Button, Pressable, TextInput } from 'react-native';
 
 const CustomButton = ({title, onPress}) => {
   return(
@@ -9,17 +9,28 @@ const CustomButton = ({title, onPress}) => {
   );
 };
 
+const CamposLogin = ({label, placeholder}) => {
+  return(
+    <View>
+    <Text style={styles.label}>{label}</Text>
+    <TextInput style={styles.input} placeholder={placeholder} />
+    </View>
+  );
+}
+
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('./assets/angel.png')} // Reemplaza con la ruta de tu logotipo
+        source={require('./assets/logo-eclipse.png')}
         style={styles.logo}
       />
-      <Text style={styles.title}>Aplicación de prueba</Text>
+      <Text style={styles.title}>Clipse</Text>
       <Text style={styles.subtitle}>Filipelli Taiel</Text>
-      <CustomButton title="Ingresar" onPress={() => alert('Esto llevará a algún lado...eventualmente.')}/>
+      <CamposLogin label={'Usuario o correo electrónico'} placeholder={'Usuario'}/>
+      <CamposLogin label={'Contraseña'} placeholder={'Contraseña'}/>
+      <CustomButton title="Iniciar sesión" onPress={() => alert('Esto será un login')}/>
     </View>
   );
 }
@@ -58,7 +69,17 @@ const styles = StyleSheet.create({
   buttonText:{
     color:'#fff',
     fontSize:20,
+  },
+  label:{
+    paddingTop: 20,
+    fontSize: 17,
+  },
+  input:{
+    backgroundColor: '#3333',
+    borderRadius: 5,
+    width:210,
   }
+
 });
 
 export default App;
