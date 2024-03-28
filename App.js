@@ -27,10 +27,10 @@ const App = () => {
         style={styles.logo}
       />
       <Text style={styles.title}>Clipse</Text>
-      <Text style={styles.subtitle}>Filipelli Taiel</Text>
       <CamposLogin label={'Usuario o correo electrónico'} placeholder={'Usuario'}/>
       <CamposLogin label={'Contraseña'} placeholder={'Contraseña'}/>
       <CustomButton title="Iniciar sesión" onPress={() => alert('Esto será un login')}/>
+      <Text style={styles.subtitle}>Filipelli Taiel</Text>
     </View>
   );
 }
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 200,
     height: 200,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 30,
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     color: '#666',
+    marginTop: 60,
   },
   button :{
     backgroundColor: '#000',
